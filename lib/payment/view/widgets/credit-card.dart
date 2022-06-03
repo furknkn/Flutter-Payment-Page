@@ -33,11 +33,22 @@ class CreditCardWidget extends StatelessWidget {
             padding: EdgeInsets.all(ScreenSize().getWidthPercent(.056)),
             width: double.infinity,
             height: ScreenSize().getWidthPercent(.25),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(24),
-                color: lCredit[index].isSelected!
-                    ? AppColors.appWhite
-                    : AppColors.softGreyLight),
+            decoration: lCredit[index].isSelected!
+                ? BoxDecoration(
+                    boxShadow: [
+                        BoxShadow(
+                          color: AppColors.appBlack.withOpacity(0.06),
+                          spreadRadius: 0,
+                          blurRadius: 36,
+                          offset:
+                              const Offset(0, 18), // changes position of shadow
+                        ),
+                      ],
+                    borderRadius: BorderRadius.circular(24),
+                    color: lCredit[index].isSelected!
+                        ? AppColors.appWhite
+                        : AppColors.softGreyLight)
+                : null,
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
