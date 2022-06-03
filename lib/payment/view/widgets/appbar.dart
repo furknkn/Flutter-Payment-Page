@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:ruutcase/core/constants/color-constants.dart';
 import 'package:ruutcase/core/utility/screen-size.dart';
 import 'package:ruutcase/core/utility/svg-icon.dart';
-import 'package:ruutcase/core/extension/context_extension.dart';
 import 'package:ruutcase/core/utility/text-style.dart';
 import '../../../core/constants/icons-constants.dart';
 
@@ -16,7 +15,8 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       child: Align(
         alignment: Alignment.bottomCenter,
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: context.mediumValue),
+          padding: EdgeInsets.symmetric(
+              horizontal: ScreenSize().getWidthPercent(.046)),
           child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [drawerMenu(), giftAndNotification()]),
