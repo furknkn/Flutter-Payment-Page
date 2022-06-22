@@ -36,6 +36,10 @@ class CuponCardWidget extends StatelessWidget {
                     width: double.infinity,
                     height: ScreenSize().getWidthPercent(.3),
                     decoration: BoxDecoration(
+                        border: lCupon[index].isSelected!
+                            ? Border.all(
+                                width: 2.0, color: AppColors.appWhiteGrey)
+                            : null,
                         color: lCupon[index].isSelected!
                             ? AppColors.appWhite
                             : AppColors.softGreyLight,
@@ -167,8 +171,16 @@ class CuponCardWidget extends StatelessWidget {
                   child: Container(
                     width: ScreenSize().getWidthPercent(.046),
                     height: ScreenSize().getWidthPercent(.046),
-                    decoration: const BoxDecoration(
-                        color: AppColors.softGreyLight, shape: BoxShape.circle),
+                    decoration: BoxDecoration(
+                      border: lCupon[index].isSelected!
+                          ? const Border(
+                              bottom: BorderSide(
+                                  width: 2.0, color: AppColors.appWhiteGrey),
+                            )
+                          : null,
+                      shape: BoxShape.circle,
+                      color: AppColors.softGreyLight,
+                    ),
                   )),
               Positioned(
                   left: ScreenSize().getWidthPercent(.11),
@@ -176,8 +188,13 @@ class CuponCardWidget extends StatelessWidget {
                   child: Container(
                     width: ScreenSize().getWidthPercent(.046),
                     height: ScreenSize().getWidthPercent(.046),
-                    decoration: const BoxDecoration(
-                        color: AppColors.softGreyLight, shape: BoxShape.circle),
+                    decoration: BoxDecoration(
+                        border: lCupon[index].isSelected!
+                            ? Border.all(
+                                width: 2.0, color: AppColors.appWhiteGrey)
+                            : null,
+                        color: AppColors.softGreyLight,
+                        shape: BoxShape.circle),
                   )),
             ],
           );
